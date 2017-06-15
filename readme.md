@@ -1,6 +1,4 @@
-## What is this?
-
-Just you wait folks!
+# LearnNode
 
 ## Sample Data
 
@@ -24,5 +22,28 @@ That will populate 16 stores with 3 authors and 41 reviews. The logins for the a
 |Debbie Downer|debbie@example.com|debbie|
 |Beau|beau@example.com|beau|
 
+## Lesson 1
 
-# LearnNode
+1st step is to run `npm install` or `yarn install`to install all the depenencies.
+
+## Lesson 2
+
+Setup mongo database using mLab and then installing local database gui MongoDB Compass.
+
+Setup `variables.env` file that contains database credentials.
+
+## Lesson 3
+
+`yarn start` to kick off server at `localhost:7777`
+
+## Lesson 4
+
+Learned about routes and how express uses req and respond
+* req has all the information
+* resond has all the methods for sending data back
+* query has all the query params from url
+* params can access items from url
+
+Learn more on the [Express Docs][express docs]
+
+[express docs]: https://expressjs.com/en/guide/routing.html
