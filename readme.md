@@ -46,4 +46,18 @@ Learned about routes and how express uses req and respond
 
 Learn more on the [Express Docs][express docs]
 
+## Lesson 5
+
+* `res.render()` renders out a template
+* template language we are using is called Pug(formerly named Jade)
+* `views` directory contains all our Pug files
+
+### Pug
+
+* is tab-based
+* don't need a closing tag
+* attributes inside () like this <br>
+`img(src="dog.jpg", alt=`Dog ${dog}`)`
+
+
 [express docs]: https://expressjs.com/en/guide/routing.html
