@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    - let upDog = dog.toUpperCase()
+    div.wrapper.another-one
+        p.hello Hello! My name is #{upDog}
+        span#yo-momma Yo!!!
+        img(src="dog.jpg", alt=`Dog ${dog}`)
+        p.dog My Dog's name is #{dog}
