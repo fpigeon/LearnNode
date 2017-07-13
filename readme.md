@@ -34,30 +34,52 @@ Setup `variables.env` file that contains database credentials.
 
 ## Lesson 3
 
+**Express** = fast minimal framework for Node <br>
+**Mongoose** = interact with MongoDB
+
+`start.js` file contains:
+
+* brings in Mongoose
+* env variables for sensitive information
+* .env files should not be checked into version control
+
 `yarn start` to kick off server at `localhost:7777`
 
 ## Lesson 4
 
-Learned about routes and how express uses req and respond
-* req has all the information
-* resond has all the methods for sending data back
-* query has all the query params from url
-* params can access items from url
+Learned about routes and how express uses req and respond.
+
+`index.js` contains routes code <br>
+routes are futher broken down in the `app.js` <br>
+
+* `req` has all the information
+* `resond` has all the methods for sending data back
+* `query` has all the query params from url
+* `params` can access items from url
+* `json` displays array in JSON format
+
+To get the date from the url
+
+`url?name=frank`
+
+You could use this
+
+`res.send(req.query.name)`
 
 Learn more on the [Express Docs][express docs]
 
 ## Lesson 5
 
 * `res.render()` renders out a template
-* template language we are using is called Pug(formerly named Jade)
+* template language we are using is called Pug (formerly named Jade)
 * `views` directory contains all our Pug files
 
 ### Pug
 
 * is tab-based
 * don't need a closing tag
-* attributes inside () like this <br>
-`img(src="dog.jpg", alt=`Dog ${dog}`)`
+* attributes inside () like this
 
+`img(src="dog.jpg", alt=`Dog ${dog}`)`
 
 [express docs]: https://expressjs.com/en/guide/routing.html
