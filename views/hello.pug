@@ -1,9 +1,13 @@
 extends layout
 
 block content
-    - let upDog = dog.toUpperCase()
+    - let upCat = cat.toUpperCase()
+    - let upName = name.toUpperCase()
     div.wrapper.another-one
-        p.hello Hello! My name is #{upDog}
+        p.hello Hello! My name is #{upName} and I have a cat named #{upCat}
         span#yo-momma Yo!!!
-        img(src="dog.jpg", alt=`Dog ${dog}`)
-        p.dog My Dog's name is #{dog}
+        img(src="http://lorempixel.com/400/200/cats", alt=`Cat ${cat}`)
+        p.cat My cat's name is #{upCat} and he is super fluffy.
+
+block footer
+    p i love you

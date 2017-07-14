@@ -82,4 +82,17 @@ Learn more on the [Express Docs][express docs]
 
 `img(src="dog.jpg", alt=`Dog ${dog}`)`
 
+### Layouts
+
+Our main layout file is `layout.pug` and we can extend it to our other pages.
+
+We can inject our content to override the layout by looking for the `block` sections in our layout files
+
+```js
+extends layout
+
+block content
+    p some new content
+```
+
 [express docs]: https://expressjs.com/en/guide/routing.html

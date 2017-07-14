@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   // res.json(req.query) // all query parameters
   res.render('hello', {
     name:'Frank',
-    dog: req.query.dog
+    cat: req.query.cat
   })
 });
 
