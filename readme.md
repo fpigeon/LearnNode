@@ -78,9 +78,11 @@ Learn more on the [Express Docs][express docs]
 
 * is tab-based
 * don't need a closing tag
-* attributes inside () like this
+* attributes inside () like this and js template literals
 
-`img(src="dog.jpg", alt=`Dog ${dog}`)`
+```html
+img(src="dog.jpg", alt=`Dog ${dog}`)
+```
 
 ### Layouts
 
@@ -95,4 +97,23 @@ block content
     p some new content
 ```
 
+## Lesson 6 : Template Helpers
+
+`helpers.js` holds data that we'll use in every template. Middleware is our `app.js` file and its purpose is to allow on every single request to put information in our locals.
+
+This is done by exporting our `helpers.js` and importing them in our `app.js`
+
+Helpers can include:
+
+* arrays
+* strings
+* libraries like [Moment.js][moment]
+
+Then in our pug file we can access it like this:
+
+```js
+p.sale Sale in ends in #{h.moment().endOf('day').fromNow()}!
+```
+
 [express docs]: https://expressjs.com/en/guide/routing.html
+[moment]: http://momentjs.com/
