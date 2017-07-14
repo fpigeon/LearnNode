@@ -99,7 +99,7 @@ block content
 
 ## Lesson 6 : Template Helpers
 
-`helpers.js` holds data that we'll use in every template. Middleware is our `app.js` file and its purpose is to allow on every single request to put information in our locals.
+`helpers.js` holds data that we'll use in every template. Middleware is in our `app.js` file and its purpose is to allow on every single request to put information in our locals.
 
 This is done by exporting our `helpers.js` and importing them in our `app.js`
 
@@ -111,7 +111,7 @@ Helpers can include:
 
 Then in our pug file we can access it like this:
 
-```js
+```html
 p.sale Sale in ends in #{h.moment().endOf('day').fromNow()}!
 ```
 
