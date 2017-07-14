@@ -115,5 +115,13 @@ Then in our pug file we can access it like this:
 p.sale Sale in ends in #{h.moment().endOf('day').fromNow()}!
 ```
 
+## Lesson 7: Controllers
+
+Controllers are the traffic cops between the Model and the View.
+
+`controllers` dirctory contains all controller files and should create one for each area of the page.
+
+Routes should shell off to seperate controller file to do the actual work.
+
 [express docs]: https://expressjs.com/en/guide/routing.html
 [moment]: http://momentjs.com/
