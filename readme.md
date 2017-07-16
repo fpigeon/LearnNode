@@ -123,5 +123,48 @@ Controllers are the traffic cops between the Model and the View.
 
 Routes should shell off to seperate controller file to do the actual work.
 
+## Lesson 8: Middleware Intro
+
+* Express's middleware is similar to React's lifecycle hooks.
+* Helpful when you want to run code after `req` but before the `res`
+* there is also ES6 global middleware
+* middleware for our app is stored in the `app.js`
+* global middleware is noted by `app.use`
+
+```js
+// The flash middleware example
+app.use(flash());
+```
+
+## Lesson 9: Models
+
+MongoDB is a loose database so you don't need to specify data types 
+
+* it is strict by default so we will need to define the schema
+* models are stored in the `models` directory and are uppercase
+* `models.Store.js` for our Store model
+* we're using **Mongoose** to interface with MongoDB using the built-in ES6 promises 
+* **Slug** library to make url friendly names
+* we let MongoDB know about the model by adding it to our `start.js`
+
+```js
+// Import all of our models
+require('./models/Store')
+```
+
+Slugs will be auto-generated into the `Store.js` model by using a pre-save hook
+
+```js
+storeSchema.pre('save', function(next) {
+    if ( !this.isModified('name') ) {
+        next() // skip it
+        return // stop this function from running
+    }
+    this.slug = slug (this.name)
+    next()
+    // TODO: Make more resiliant so slugs are unique 
+})
+```
+
 [express docs]: https://expressjs.com/en/guide/routing.html
 [moment]: http://momentjs.com/
