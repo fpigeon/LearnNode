@@ -138,12 +138,12 @@ app.use(flash());
 
 ## Lesson 9: Models
 
-MongoDB is a loose database so you don't need to specify data types 
+MongoDB is a loose database so you don't need to specify data types
 
 * it is strict by default so we will need to define the schema
 * models are stored in the `models` directory and are uppercase
 * `models.Store.js` for our Store model
-* we're using **Mongoose** to interface with MongoDB using the built-in ES6 promises 
+* we're using **Mongoose** to interface with MongoDB using the built-in ES6 promises
 * **Slug** library to make url friendly names
 * we let MongoDB know about the model by adding it to our `start.js`
 
@@ -162,8 +162,33 @@ storeSchema.pre('save', function(next) {
     }
     this.slug = slug (this.name)
     next()
-    // TODO: Make more resiliant so slugs are unique 
+    // TODO: Make more resiliant so slugs are unique
 })
+```
+
+## Lesson 10: Saving Data
+
+This Lesson gets the `Add` page working
+
+1. `index.js` adds the route
+1. `storeController` adds new route logic + renders the template
+1. `editStore` to use same template to add /edit
+1. Add a view `editStore.pug`
+1. Form will be a reusable component via mixin in the `mixins/_storeForm.pug` directory
+1. Import the new mixin from the `editStore.pug`
+1. Build out form in mixin
+1. Add route for **POST** on `createStore` method of `index.js` file
+
+> `editStore.pub` file
+
+```js
+extends layout
+include mixins/_storeForm
+
+block content
+    .inner
+        h2 #{title}
+        +storeForm()
 ```
 
 [express docs]: https://expressjs.com/en/guide/routing.html
