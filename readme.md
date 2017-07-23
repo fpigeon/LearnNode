@@ -191,5 +191,46 @@ block content
         +storeForm()
 ```
 
+## Episode 11: Persisting Data
+
+In our `storeController.js` file
+
+* import `Mongoose` to interface with MongoDB
+* import Store model
+* send data from form `req.body` into the Store
+  * not an issue since DB is using a strict schema
+  * syntax is `store.save()`
+
+In ES8 we can use `async await`
+
+```javascript
+exports.createStore = async (req, res) => {
+    const store = new Store(req.body)
+    await store.save()
+    console.log('it worked')
+    res.redirect('/')
+}
+```
+We use *composition* to wrap our `async await` function with our error handler middleware
+
+This is a clean way to handle errors without using a `try catch`.
+
+Bring it into the routes with *object destucturing* which just brings in the method you wrapped in curly brackets.
+
+```javascript
+...
+const { catchErrors } = require('../handlers/errorHandlers')
+...
+router.post('/add', catchErrors(storeController.createStore))
+```
+
+### Recap
+
+To Save Data:
+
+* write your schema
+* in the controller add new Store
+* and then call method `store.save()`
+
 [express docs]: https://expressjs.com/en/guide/routing.html
 [moment]: http://momentjs.com/
