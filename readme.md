@@ -232,5 +232,27 @@ To Save Data:
 * in the controller add new Store
 * and then call method `store.save()`
 
+## Episode 12: Flash Messages
+
+Flashes show information after action. In our controller we can add the syntax `req.flash(arg1, arg2)`. It is accessible since it is originated from the flash middleware in our `app.js`.
+
+(1st parameter) is the type of message:
+
+* success
+* error
+* warning
+* info
+
+(2nd parameter) is the message like `Successfully created ${store.name}.`.
+
+### Locals
+
+*Locals* are available to our template. In our `layout.pub` we loop over our `locals.flashes`.
+
+You can also dump data by `pre= h.dump(locals)` to see all locals we have access to.
+
+Flashes only work with sessions since we can move from one req to another.
+
+
 [express docs]: https://expressjs.com/en/guide/routing.html
 [moment]: http://momentjs.com/
