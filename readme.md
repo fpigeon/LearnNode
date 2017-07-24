@@ -191,7 +191,7 @@ block content
         +storeForm()
 ```
 
-## Episode 11: Persisting Data
+## Lesson 11: Persisting Data
 
 In our `storeController.js` file
 
@@ -232,7 +232,7 @@ To Save Data:
 * in the controller add new Store
 * and then call method `store.save()`
 
-## Episode 12: Flash Messages
+## Lesson 12: Flash Messages
 
 Flashes show information after action. In our controller we can add the syntax `req.flash(arg1, arg2)`. It is accessible since it is originated from the flash middleware in our `app.js`.
 
@@ -252,6 +252,28 @@ Flashes show information after action. In our controller we can add the syntax `
 You can also dump data by `pre= h.dump(locals)` to see all locals we have access to.
 
 Flashes only work with sessions since we can move from one req to another.
+
+## Lesson 13: Display Store Data
+
+In the `storeController` we setup a new controller method named `getStores`.
+
+In our routes files `index.js` call our new controller method for routes to `/` and `/stores`
+
+Our view file will be called `stores.pug`
+
+* Query the DB for all the stores
+  * use store.find()
+* update method to *async* function and wrap route with catchErrors()
+* use *await* in front of the store.find() to wait for DB results
+* send stores into the view and dump them to console
+* loop over stores in view using pug syntax `each store in stores` and access properties like `store.name`
+* shell off store component to store mixin called `_storeCard.pug` and import that into the view
+
+### Recap
+
+Route -> storeController -> get Store data -> send to template
+
+
 
 
 [express docs]: https://expressjs.com/en/guide/routing.html
